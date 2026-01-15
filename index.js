@@ -7,6 +7,7 @@ import connectDB from "./db/connectDb.js"
 
 import movieRoute from "./routes/movie/movieRoute.js"
 import authRoute from "./routes/auth/adminRoute.js"
+import siteSetting from "./routes/setting/settingRoute.js"
 
 dotenv.config()
 
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/movie",movieRoute)
 app.use("/api/admin",authRoute)
+app.use("/api/site-settings",siteSetting)
 
 app.use((req, res) => {
   res.status(404).json({
